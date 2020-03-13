@@ -7,20 +7,26 @@ class App extends Component {
     console.log("Default initializer")
 
     const movies = [
-      {id: 0, title: "The Godfather", overwiev: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family."},
-      {id: 1, title: "The Godfather: Part II", overwiev: "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York"},
+      {id: 0, poster_src: "https://image.tmdb.org/t/p/w185_and_h278_bestv2/d4KNaTrltq6bpkFS01pYtyXa09m.jpg", title: "The Godfather", overwiev: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family."},
+      {id: 1, poster_src: "https://image.tmdb.org/t/p/w185_and_h278_bestv2/bVq65huQ8vHDd1a4Z37QtuyEvpA.jpg", title: "The Godfather: Part II", overwiev: "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York"},
     ]
-
-    this.state = {rows: [
-      <p key="1">This is row 0</p>,
-      <p key="2">This is row 1</p>,
-      <p key="3">This is row 2</p>
-    ]}
 
     let movieRows = []
     movies.forEach((movie) => {
-      console.log(movie.name)
-    movieRows.push(<p key={movie.id}>{movie.title}</p>)
+      console.log(movie.title)
+      const movieRow = <table key={movie.id}>
+        <tbody>
+          <tr>
+            <td>
+              <img alt="poster" src={movie.poster_src}/>
+              </td>
+              <td>
+              {movie.title}
+              </td>
+          </tr>
+        </tbody >
+      </table>
+    movieRows.push(movieRow)
     })
 
     this.state = {rows : movieRows}
