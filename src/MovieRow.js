@@ -1,6 +1,7 @@
 import React from 'react'
 
 class MovieRow extends React.Component {
+
     render() {
         return <table key={this.props.movie.id}>
         <tbody>
@@ -10,7 +11,7 @@ class MovieRow extends React.Component {
               </td>
               <td>
               {this.props.movie.title}
-              <p>{this.props.movie.overwiev}</p>
+                <p>{this.props.movie.overview}</p>
               </td>
           </tr>
         </tbody >

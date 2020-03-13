@@ -28,7 +28,7 @@ class App extends Component {
 }
     perfomSearch() {
       console.log("Perform search using MovieDB API")
-      const urlString = "https://api.themoviedb.org/3/search/movie?query=marvel&api_key=1b5adf76a72a13bad99b8fc0c68cb085"
+      const urlString = "https://api.themoviedb.org/3/search/movie?query=woman&api_key=1b5adf76a72a13bad99b8fc0c68cb085"
       $.ajax({
         url: urlString,
         success: (searchResults) => {
@@ -42,7 +42,7 @@ class App extends Component {
           results.forEach((movie) => {
             movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path
             // console.log(movie.title)
-            const movieRow = <MovieRow movie={movie} />
+            const movieRow = <MovieRow key={movie.id} movie={movie} />
             movieRows.push(movieRow)
           })
 
