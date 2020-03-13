@@ -16,6 +16,14 @@ class App extends Component {
       <p key="2">This is row 1</p>,
       <p key="3">This is row 2</p>
     ]}
+
+    let movieRows = []
+    movies.forEach((movie) => {
+      console.log(movie.name)
+    movieRows.push(<p key={movie.id}>{movie.title}</p>)
+    })
+
+    this.state = {rows : movieRows}
 }
 
 render() {
