@@ -24,7 +24,7 @@ class App extends Component {
 
     // this.state = {rows : movieRows}
 
-    this.perfomSearch("Lord of the Rings")
+    this.perfomSearch("Lord of the Rings") // default search string when you start app
 }
     perfomSearch(searchTerm) {
       console.log("Perform search using MovieDB API")
