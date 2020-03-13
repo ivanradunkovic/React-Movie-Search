@@ -18,6 +18,8 @@ function App() {
         </tbody>
       </table>
    
+      <input className="Search" placeholder="Search for movie" />
+
     </div>
   );
 }
